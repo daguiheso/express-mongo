@@ -11,6 +11,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var errorHandler = require('errorhandler');
+var user = require('./controllers/users')
 require('./models');
 
 
@@ -37,6 +38,7 @@ if ('development' == app.get('env')) {
 
 // rutas
 app.use(home);
+app.use(user);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
