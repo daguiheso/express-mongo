@@ -11,6 +11,8 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var errorHandler = require('errorhandler');
+require('./models');
+
 
 var app = express();
 
