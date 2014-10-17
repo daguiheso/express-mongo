@@ -1,15 +1,15 @@
 module.exports = function(mongoose){
 	var Schema = mongoose.Schema;
 
-	var UserShema = new Schema({
+	var UserSchema = new Schema({
 		name: String,
 		birthdate: Date,
 		isAdmin: Boolean
 	});
 
-	UserShema.methods.age = function(){
-		return ~~((Date.now() - this.birthdate) / (315576000000));
+	UserSchema.methods.age = function(){
+		return ~~((Date.now() - this.birthdate) / (31557600000));
 	}
 
-	return mongoose.model('User', UserShema);
+	return mongoose.model('User', UserSchema);
 }

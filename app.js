@@ -2,6 +2,8 @@
 /**
  * Module dependencies.
  */
+require('./models');
+
 
 var express = require('express');
 var http = require('http');
@@ -11,14 +13,14 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var errorHandler = require('errorhandler');
-var user = require('./controllers/users')
-require('./models');
+
 
 
 var app = express();
 
 // modulos
 var home = require('./controllers/home');
+var user = require('./controllers/user');
 
 // all environments
 app.set('port', process.env.PORT || 3000);
